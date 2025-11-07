@@ -18,9 +18,4 @@ class ContaBancaria:
             return True
         return False
     
-    def sacar(self, valor: float) -> None:
-        if self.validarSaque(valor):
-            self.__saldo -= valor
-        else:
-            raise ValueError("Saldo insuficiente para saque.")
-            
+    

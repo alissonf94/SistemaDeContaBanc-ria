@@ -25,3 +25,17 @@ def test_deve_retornar_uma_exception_apos_deposito_valido():
         conta.depositar(valor_deposito)
     
     assert "Valor de depósito inválido." in str(excinfo.value)
+
+def test_deve_validar_saldo_apos_sacar_valor():
+
+    conta = ContaBancaria()
+    valor_deposito = 200.0
+    conta.depositar(valor_deposito)
+
+    valor_saque = 50.0
+    saldo_esperado = 150.0
+
+    
+    conta.sacar(valor_saque)
+
+    assert conta.get_saldo() == saldo_esperado
